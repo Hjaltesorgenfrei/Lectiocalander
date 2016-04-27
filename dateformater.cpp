@@ -13,7 +13,7 @@ datestruct dateformater(const char *input)
 {
 	result = sscanf(input, "%[^/]/%[^-]-%s%[^:]:%s", dage, maaneder, aar, timer, minutter); //looks for first /, then -, then : and puts them into char arrays
 	datestruct temp_date = {};
-	temp_date.year = atoi(aar); //converts the char * to an integer.
+	temp_date.year = atoi(aar); //converts the char * to an integer.g
 	temp_date.month = atoi(maaneder); 
 	temp_date.day = atoi(dage); 
 	temp_date.hour = atoi(timer);
