@@ -24,7 +24,7 @@ int main()
 	const char *datoinput = "7/12-2015 09:00";
 	datestruct output = dateformater(datoinput);
 	cout << output.year << "-" << output.month << "/" << output.day << endl;
-	//curlwebsite("www.example.com");
+	//curlwebsite("www.examplef.com");
 	cin.ignore();
 	return 0;
 }
