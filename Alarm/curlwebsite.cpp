@@ -21,12 +21,12 @@ std::string curlwebsite(std::string urlpassed)
 		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);		//Perform the request, res will get the return code	
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);	//sets callback as WriteCallback
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);	//sets curl to write data to readBuffer
-		res = curl_easy_perform(curl);	
+		res = curl_easy_perform(curl);
 		if (res != CURLE_OK)	// Check for errors
 			fprintf(stderr, "curl_easy_perform() failed: %s\n",
 				curl_easy_strerror(res));
 
-	curl_easy_cleanup(curl);		// always cleanup
+		curl_easy_cleanup(curl);		// always cleanup
 	}
 	return (readBuffer);
 }
