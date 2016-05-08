@@ -2,4 +2,4 @@
 #include <string>
 #include <regex>
 
-std::vector<std::string> datesearch(std::string htmlinput);
+std::vector<std::string> datesearch(std::string htmlinput, std::regex expression);

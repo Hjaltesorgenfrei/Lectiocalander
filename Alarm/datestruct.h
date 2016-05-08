@@ -10,5 +10,5 @@ struct datestruct
 	int minutes;
 	std::string teacher;
 	std::string note;
-	std::string rooms; 
+	std::string rooms;
 };
