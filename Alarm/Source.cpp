@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
 Made by Hjalte Sorgenfrei Mac Dalland
 Hjaltesorgenfrei@gmail.com
@@ -59,36 +58,3 @@ I then use it to upload "stuff" into calanders/ output Icalander files.
 //Change from standard Regex to Boost Regex and see if their is a significant speed boost.
 //
 //
-
-#include <stdio.h>
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <regex>
-#include <curl/curl.h>
-#include <ctime>
-#include <regex>
-#include <vector>
-
-#include "curlwebsite.h"
-#include "datestruct.h"
-#include "dateformater.h"
-#include "regularexsearch.h"
-	// current sscanf search output: "7/12-2015 09:00";
-	//current regex: ("\\btitle[=]\".*?\\n?.*?\\n?\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*")
-
-
-
-
-int main()
-{
-	std::string inputurl;
-	std::cin >> inputurl; //get url from user. - Maybe from file later
-	std::string lectiodata = curlwebsite(inputurl); //gets the html of the provided site.
-	std::vector<std::string> lektionsdata = datesearch(lectiodata); // Gets lessondata from the regex.
-	std::cout << "antal lektioner: " << int(lektionsdata.size()) << std::endl; 
-	system("pause");
-	std::cin.ignore();
-	return 0;
->>>>>>> 951037755ba25e4dd3a6b0b405c0395e047f2ac6
-}
