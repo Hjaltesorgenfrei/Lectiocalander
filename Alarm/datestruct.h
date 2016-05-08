@@ -11,3 +11,4 @@ struct datestruct
 	std::string teacher;
 	std::string note;
 	std::string rooms;
+};

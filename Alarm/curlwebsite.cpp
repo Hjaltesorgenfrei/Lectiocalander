@@ -29,3 +29,4 @@ std::string curlwebsite(std::string urlpassed)
 		curl_easy_cleanup(curl);		// always cleanup
 	}
 	return (readBuffer);
+}
