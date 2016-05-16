@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-struct datestruct
+struct Datestruct
 {
 	int year;
 	int month;

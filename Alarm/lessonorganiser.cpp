@@ -8,6 +8,15 @@
 
 std::vector<std::string> slessonorgansiser(std::string htmlinput)
 {
-	std::vector<std::string> outputfromregex1 = datesearch(htmlinput, std::basic_regex<char> ("\\btitle[=]\".*?\\n?.*?\\n?\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*"));
-	return outputfromregex1;
+	//std::vector<std::string> outputfromregex2 = datesearch(htmlinput, std::basic_regex<char> ("\\btitle[=]\".*?\\n?.*?\\n?\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*")); base regex
+	
+	std::vector<std::string> outputfromregex1 = datesearch(htmlinput, std::basic_regex<char>("\\btitle[=]\".*\\n.*\\n\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*"));
+	// matches following:
+	//title = "Ændret!
+	//	Grundforløbsopsamling
+	//	18 / 5 - 2016 12:00 til 12 : 45
+	//	Hold : 2 BI Camilla
+	//	Elever : Frederik A.Lindvig Frøshøj(1q 03), Hjalte Sorgenfrei Mac Dalland(xx 01), Julian Modesto Hauvn Beltran del Alisal(1q 02), Marcus Hou Vangsaae Friis(1q 01)
+	//	Lærer : Julie Nørgaard Hostrup(jun)
+	//	Lokale : 36 Biologi">	return outputfromregex1;
 }

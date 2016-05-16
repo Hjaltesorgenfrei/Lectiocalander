@@ -31,9 +31,6 @@ I then use it to upload "stuff" into calanders/ output Icalander files.
 	// current sscanf search output: "7/12-2015 09:00";
 	//current regex: ("\\btitle[=]\".*?\\n?.*?\\n?\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*")
 
-
-
-
 int main()
 {
 	std::string inputurl;
