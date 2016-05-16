@@ -4,4 +4,4 @@
 #include "datestruct.h"
 #include "dateformater.h"
 
-std::vector<std::string> slessonorgansiser(std::string htmlinput);
+std::vector<Datestruct> slessonorgansiser(std::string htmlinput);
