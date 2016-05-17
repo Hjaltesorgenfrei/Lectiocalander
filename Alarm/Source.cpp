@@ -38,10 +38,6 @@ int main()
 	std::string lectiodata = curlwebsite(inputurl); //gets the html of the provided site.
 	std::vector<Datestruct> lektionsdata = slessonorgansiser(lectiodata); // Gets lessondata slessonorganiser which takes string.
 	std::cout << "antal lektioner: " << int(lektionsdata.size()) << std::endl;
-	std::cout << lektionsdata[2].year << std::endl;
-	std::cout << lektionsdata[3].day << std::endl;
-	std::cout << lektionsdata[4].day << std::endl;
-	std::cout << lektionsdata[5].day << std::endl;
 	system("pause");
 	return 0;
 }

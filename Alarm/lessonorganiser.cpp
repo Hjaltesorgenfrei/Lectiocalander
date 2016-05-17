@@ -13,7 +13,7 @@ std::vector<Datestruct> slessonorgansiser(std::string htmlinput)
 	//std::vector<std::string> outputfromregex2 = datesearch(htmlinput, std::basic_regex<char> ("\\btitle[=]\".*?\\n?.*?\\n?\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*")); 
 	//base regex should in theory match all the possible lessons.
 	
-	std::vector<std::string> outputfromregex1 = datesearch(htmlinput, std::basic_regex<char>("\\btitle[=]\".*\\n.*\\n\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*"));
+//	std::vector<std::string> outputfromregex1 = datesearch(htmlinput, std::basic_regex<char>("\\btitle[=]\".*\\n.*\\n\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*"));
 	// matches following:
 	//title = "Ændret!
 	//Grundforløbsopsamling
@@ -23,7 +23,7 @@ std::vector<Datestruct> slessonorgansiser(std::string htmlinput)
 	//Lærer : Julie Nørgaard Hostrup(jun)
 	//Lokale : 36 Biologi">
 
-	std::vector<std::string> outputfromregex2 = datesearch(htmlinput, std::basic_regex<char>("\\btitle[=]\".*\\n\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*"));
+//	std::vector<std::string> outputfromregex2 = datesearch(htmlinput, std::basic_regex<char>("\\btitle[=]\".*\\n\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*"));
 	//matches following:
 	//title = "Ændret!
 	//20 / 5 - 2016 12:00 til 12 : 45
@@ -37,12 +37,8 @@ std::vector<Datestruct> slessonorgansiser(std::string htmlinput)
 	//Hold: 1q BI
 	//Lærer : Sidse Holten - Rossing(sihr)
 	//Lokale : 382
-	
+	std::cout << outputfromregex3.size() << outputfromregex3[2] << std::endl;
+	Datestruct testdate = dateformaterchanged(outputfromregex3[2]);
 	std::vector<Datestruct> lessons = stringtodatestruct(outputfromregex3, "%[^\"]\"%[^/]/%[^-]-%s%[^:]:%s");
-	for (std::vector<std::string>::iterator it = outputfromregex3.begin(); it != outputfromregex3.end(); ++it) {
-		Datestruct tempdate = dateformaterstd(*it);
-		lessons.push_back(tempdate);
-		std::cout << tempdate.year << std::endl;
-	}
 	return lessons;
 }
