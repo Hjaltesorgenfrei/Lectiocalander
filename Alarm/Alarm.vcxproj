@@ -159,6 +159,7 @@
     <ClCompile Include="regularexsearch.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="curlwebsite.cpp" />
+    <ClCompile Include="stringtodatestruct.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -169,6 +170,7 @@
     <ClInclude Include="datestruct.h" />
     <ClInclude Include="lessonorganiser.h" />
     <ClInclude Include="regularexsearch.h" />
+    <ClInclude Include="stringtodatestruct.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

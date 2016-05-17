@@ -6,6 +6,7 @@
 #include <vector>
 #include "dateformater.h"
 #include <iostream>
+#include "stringtodatestruct.h"
 
 std::vector<Datestruct> slessonorgansiser(std::string htmlinput)
 {
@@ -37,10 +38,11 @@ std::vector<Datestruct> slessonorgansiser(std::string htmlinput)
 	//Lærer : Sidse Holten - Rossing(sihr)
 	//Lokale : 382
 	
-	std::vector<Datestruct> lessons;
+	std::vector<Datestruct> lessons = stringtodatestruct(outputfromregex3, "%[^\"]\"%[^/]/%[^-]-%s%[^:]:%s");
 	for (std::vector<std::string>::iterator it = outputfromregex3.begin(); it != outputfromregex3.end(); ++it) {
 		Datestruct tempdate = dateformaterstd(*it);
 		lessons.push_back(tempdate);
+		std::cout << tempdate.year << std::endl;
 	}
 	return lessons;
 }

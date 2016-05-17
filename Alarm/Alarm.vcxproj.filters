@@ -30,6 +30,9 @@
     <ClCompile Include="lessonorganiser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stringtodatestruct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="lessonorganiser.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringtodatestruct.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
