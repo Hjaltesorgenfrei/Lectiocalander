@@ -9,6 +9,6 @@ struct Datestruct
 	int hour;
 	int minute;
 	std::string note;
-	int minuteafter;
-	int hourafter;
+	int minuteafter; //the time the lesson ends
+	int hourafter; //the time the lesson ends
 };

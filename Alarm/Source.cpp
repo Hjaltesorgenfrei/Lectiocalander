@@ -2,24 +2,23 @@
 Made by Hjalte Sorgenfrei Mac Dalland
 Hjaltesorgenfrei@gmail.com
 Signed 2016/02/03
-A program which takes lesson data about time and date. Then puts it into a struct to hold all the data.
-I then use it to upload "stuff" into calanders/ output Icalander files.
+Version 0.60
+
+This is a program which takes lesson data about time and date from lectio.dk. Then puts it into a struct to hold all the data.
+It then uses it to upload "stuff" into calanders/ output Icalander files.
+
+only input currently is a url to a site containing a schedule, be that a class or a pupil
 */
 
 //TODO
-//Maybe change the regular search and remove the "?"s as it makes it hard to format the data. Could be done by creating mutilpe regular expressions and put them in a vector each. - Might help with performance as well.
+//Create a GUI in qt
 //
-//Change from standard Regex to Boost Regex and see if their is a significant speed boost.
-//
-//Remove "?" from the regex as much as possible and make it multiple regex searches to make the date formatable and run faster.
+//Figure out googles API, this might involve getting two factor authentication to work
 
 #include <stdio.h>
 #include <iostream>
 #include <string>
-#include <fstream>
-#include <regex>
 #include <curl/curl.h>
-#include <ctime>
 #include <boost/regex.hpp>
 #include <vector>
 
@@ -27,15 +26,14 @@ I then use it to upload "stuff" into calanders/ output Icalander files.
 #include "datestruct.h"
 #include "dateformater.h"
 #include "regularexsearch.h"
-	// current sscanf search output: "7/12-2015 09:00";
-	//current regex: ("\\btitle[=]\".*?\\n?.*?\\n?\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*")
+	//current regex: (\\btitle[=]\")(.{1,50}\\n)?(\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2})\\n(\\bHold:.*?\\n.*?\\n.*?)?\\n")
 
 int main()
 {
 	std::string inputurl;
-	std::cin >> inputurl; //get url from user. - Maybe from file later
-	std::string lectiodata = curlwebsite(inputurl); //gets the html of the provided site.
-	std::vector<Datestruct> lektionsdata = datesearch(lectiodata); // Gets lessondata slessonorganiser which takes string.
+	std::cin >> inputurl; //get url from user. - Maybe from ini file later
+	std::string lectiodata = curlwebsite(inputurl); //gets the html of the site which was provided url from
+	std::vector<Datestruct> lektionsdata = datesearch(lectiodata); //sends the html to regex which formats the data and sends back a vector of Datestructs
 	std::cout << "antal lektioner: " << int(lektionsdata.size()) << std::endl;
 	for (int i = 0; i <= 100; i++) {
 		int caller;
