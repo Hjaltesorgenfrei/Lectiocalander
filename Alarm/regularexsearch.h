@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "datestruct.h"
 #include <boost/regex.hpp>
 
-std::vector<std::string> datesearch(std::string htmlinput, boost::regex expression);
+std::vector<Datestruct> datesearch(std::string htmlinput);

@@ -36,8 +36,15 @@ int main()
 	std::string inputurl;
 	std::cin >> inputurl; //get url from user. - Maybe from file later
 	std::string lectiodata = curlwebsite(inputurl); //gets the html of the provided site.
-	std::vector<Datestruct> lektionsdata = slessonorgansiser(lectiodata); // Gets lessondata slessonorganiser which takes string.
+	std::vector<Datestruct> lektionsdata = datesearch(lectiodata); // Gets lessondata slessonorganiser which takes string.
 	std::cout << "antal lektioner: " << int(lektionsdata.size()) << std::endl;
+	for (int i = 0; i <= 100; i++) {
+		int caller;
+		std::cin >> caller;
+		std::cout << "Note: " << lektionsdata[caller].note << std::endl;
+		std::cout << "Time: " << lektionsdata[caller].hour << ":" << lektionsdata[caller].minute << " til " << lektionsdata[caller].hourafter << ":" << lektionsdata[caller].minuteafter << std::endl;
+		std::cout << "Date: " << lektionsdata[caller].day << "-" << lektionsdata[caller].month << "/" << lektionsdata[caller].year << std::endl;
+	}
 	system("pause");
 	return 0;
 }

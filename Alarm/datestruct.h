@@ -7,8 +7,8 @@ struct Datestruct
 	int month;
 	int day;
 	int hour;
-	int minutes;
-	std::string teacher;
+	int minute;
 	std::string note;
-	std::string rooms;
+	int minuteafter;
+	int hourafter;
 };

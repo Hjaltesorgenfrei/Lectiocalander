@@ -6,7 +6,7 @@ std::vector<Datestruct> stringtodatestruct(std::vector<std::string> unformattedl
 {
 	std::vector<Datestruct> lessons;
 	for (std::vector<std::string>::iterator it = unformattedlessons.begin(); it != unformattedlessons.end(); it ++) {
-		Datestruct tempdate = dateformaterstd(*it, formatter);
+		Datestruct tempdate = dateformater(*it, formatter);
 		lessons.push_back(tempdate);
 		std::cout << tempdate.year << std::endl;
 	}
