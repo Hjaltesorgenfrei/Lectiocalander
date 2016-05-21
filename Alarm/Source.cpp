@@ -20,7 +20,7 @@ I then use it to upload "stuff" into calanders/ output Icalander files.
 #include <regex>
 #include <curl/curl.h>
 #include <ctime>
-#include <regex>
+#include <boost/regex.hpp>
 #include <vector>
 
 #include "curlwebsite.h"

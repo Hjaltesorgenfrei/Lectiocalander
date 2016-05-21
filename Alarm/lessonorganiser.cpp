@@ -1,5 +1,5 @@
 #include "lessonorganiser.h"
-#include <regex>
+#include <boost/regex.hpp>
 #include <string>
 #include "datestruct.h"
 #include "regularexsearch.h"
@@ -31,7 +31,7 @@ std::vector<Datestruct> slessonorgansiser(std::string htmlinput)
 	//Lærer : Sidse Holten - Rossing(sihr)
 	//Lokale : 382
 
-	std::vector<std::string> outputfromregex3 = datesearch(htmlinput, std::basic_regex<char>("\\btitle[=]\"\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2}[\\n]\\bHold:.*\\n.*\\n.*"));
+	std::vector<std::string> outputfromregex3 = datesearch(htmlinput, boost::basic_regex<char>("\\btitle[=](\"\\d{1,2}/\\d{1,2}-\\d{4}\\s\\d{2}:\\d{2}\\s\\btil\\s\\d{2}[:]\\d{2})\\n\\bHold:.*?\\n.*?\\n.*?\\n"));
 	//matches the following:
 	//title = "20/5-2016 12:45 til 13:30
 	//Hold: 1q BI
