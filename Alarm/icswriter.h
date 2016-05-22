@@ -2,4 +2,4 @@
 #include "Datestruct.h"
 #include <vector>
 
-int writetoics(std::vector<Datestruct>);
+int writetoics(std::vector<Datestruct> dates);
